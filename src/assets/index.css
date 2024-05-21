@@ -11,7 +11,11 @@
 /* BUTTONS */
 /* ----- primary */
 .btn {
-  @apply font-bold py-2 p-4 rounded-full;
+  @apply font-bold py-2 px-4 rounded-full;
+}
+
+.btn--small {
+  @apply w-fit px-1.5 text-sm font-bold rounded-full;
 }
 
 .btn:disabled {
@@ -28,7 +32,7 @@
 
 /* ----- default */
 .btn-white {
-  @apply bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-300 rounded-full;
+  @apply bg-white text-gray-800 font-semibold border border-gray-300 rounded-full;
 }
 
 .btn-white:hover:not(:disabled) {
@@ -44,5 +48,5 @@
 /* ----- default */
 
 .input-default {
-  @apply shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline;
+  @apply shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
 }
