@@ -11,7 +11,7 @@
 /* BUTTONS */
 /* ----- primary */
 .btn {
-  @apply font-bold py-2 p-4 min-w-14 rounded-full;
+  @apply font-bold py-2 p-4 rounded-full;
 }
 
 .btn:disabled {
@@ -38,4 +38,11 @@
 /* CARDS */
 .card-primary {
   @apply p-8 min-w-56	max-w-sm rounded-xl overflow-hidden shadow-md;
+}
+
+/* INPUTS */
+/* ----- default */
+
+.input-default {
+  @apply shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline;
 }
