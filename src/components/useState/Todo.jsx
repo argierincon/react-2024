@@ -62,29 +62,32 @@ export const Todo = () => {
           </section>
         </div>
 
-        <div className="mt-6 pl-4">
-          <ul className="list-disc">
-            {taskList.map((item, idx) => {
-              return (
-                <li className="mt-2" key={`${idx}-${item}`}>
-                  <div className="grid grid-cols-[1fr_40px] items-center">
-                    <p>{item}</p>
-                    <button
-                      className="btn--small btn-white"
-                      onClick={() => onClearItem(idx)}
-                    >
-                      <span>x</span>
-                    </button>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
         {taskList.length > 0 && (
-          <button className="btn--small btn-white mt-4" onClick={onClearList}>
-            Clear list
-          </button>
+          <>
+            <div className="mt-6 pl-4">
+              <ul className="list-disc">
+                {taskList.map((item, idx) => {
+                  return (
+                    <li className="mt-2" key={`${idx}-${item}`}>
+                      <div className="grid grid-cols-[1fr_40px] items-center">
+                        <p>{item}</p>
+                        <button
+                          className="btn--small btn-white"
+                          onClick={() => onClearItem(idx)}
+                        >
+                          <span>x</span>
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
+            <button className="btn--small btn-white mt-4" onClick={onClearList}>
+              Clear list
+            </button>
+          </>
         )}
       </section>
     </>
