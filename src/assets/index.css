@@ -41,7 +41,7 @@
 
 /* CARDS */
 .card-primary {
-  @apply p-8 min-w-56	max-w-sm rounded-xl overflow-hidden shadow-md;
+  @apply p-8 min-w-56	max-w-sm bg-white rounded-xl overflow-hidden shadow-md;
 }
 
 /* INPUTS */
