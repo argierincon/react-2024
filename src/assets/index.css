@@ -10,16 +10,19 @@
 
 /* BUTTONS */
 /* ----- primary */
-.btn-primary,
-.btn-default {
+.btn {
   @apply font-bold py-2 p-4 min-w-14 rounded-full;
+}
+
+.btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
 }
 
 .btn-blue {
   @apply bg-blue-500 text-white;
 }
 
-.btn-blue:hover {
+.btn-blue:hover:not(:disabled) {
   @apply bg-blue-700;
 }
 
@@ -28,7 +31,7 @@
   @apply bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-300 rounded-full;
 }
 
-.btn-white:hover {
+.btn-white:hover:not(:disabled) {
   @apply bg-gray-100;
 }
 
