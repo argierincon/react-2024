@@ -2,7 +2,7 @@ import { Counter, Todo } from "./components/useState/Imports.jsx";
 
 const App = () => {
   return (
-    <section>
+    <section className="bg-slate-50 h-screen p-4">
       <Counter />
       <Todo />
     </section>
