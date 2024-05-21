@@ -9,7 +9,7 @@ export const Counter = () => {
   };
 
   const handleDecrement = () => {
-    if (counter <= 0) return;
+    if (counter === 0) return;
     setCounter(counter - 1);
   };
 
@@ -27,17 +27,21 @@ export const Counter = () => {
         <p className="text-6xl text-gray-700">{counter}</p>
 
         <section className="mt-6 flex gap-2">
-          <button className="btn-primary btn-blue" onClick={handleIncrement}>
+          <button className="btn btn-blue" onClick={handleIncrement}>
             +1
           </button>
-          <button className="btn-default btn-white" onClick={handleReset}>
+          <button
+            className="btn btn-white"
+            onClick={handleReset}
+            disabled={counter === 0}
+          >
             Reset
           </button>
           <button
-            className={`btn-primary btn-blue ${
-              counter <= 0 ? "cursor-not-allowed" : ""
+            className={`btn btn-blue ${
+              counter === 0 ? "cursor-not-allowed" : ""
             }`}
-            disabled={counter <= 0}
+            disabled={counter === 0}
             onClick={handleDecrement}
           >
             -1
