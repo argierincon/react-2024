@@ -27,16 +27,6 @@ export const Counter = () => {
         <p className="text-6xl text-gray-700">{counter}</p>
 
         <section className="mt-6 flex gap-2">
-          <button className="btn btn-blue" onClick={handleIncrement}>
-            +1
-          </button>
-          <button
-            className="btn btn-white"
-            onClick={handleReset}
-            disabled={counter === 0}
-          >
-            Reset
-          </button>
           <button
             className={`btn btn-blue ${
               counter === 0 ? "cursor-not-allowed" : ""
@@ -45,6 +35,17 @@ export const Counter = () => {
             onClick={handleDecrement}
           >
             -1
+          </button>
+          <button
+            className="btn btn-white"
+            onClick={handleReset}
+            disabled={counter === 0}
+          >
+            Reset
+          </button>
+
+          <button className="btn btn-blue" onClick={handleIncrement}>
+            +1
           </button>
         </section>
       </div>
