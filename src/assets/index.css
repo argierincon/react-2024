@@ -9,19 +9,25 @@
 }
 
 /* BUTTONS */
-/* ----- primary */
-.btn {
-  @apply font-bold py-2 px-4 rounded-full;
+.btn,
+.btn--small {
+  @apply font-semibold rounded-full;
 }
 
-.btn:disabled {
-  @apply opacity-50 cursor-not-allowed;
+.btn {
+  @apply py-2 px-4;
 }
 
 .btn--small {
-  @apply w-fit px-1.5 text-sm font-bold rounded-full;
+  @apply w-fit px-1.5 text-sm;
 }
 
+.btn:disabled,
+.btn--small:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* ----- primary */
 .btn-blue {
   @apply bg-blue-500 text-white;
 }
@@ -36,7 +42,7 @@
 
 /* ----- default */
 .btn-white {
-  @apply bg-white text-gray-800 font-semibold border border-gray-300 rounded-full;
+  @apply bg-white text-gray-800 font-semibold border border-gray-300;
 }
 
 .btn-white:hover:not(:disabled) {
@@ -59,7 +65,7 @@
 }
 
 .input-label {
-  @apply block text-gray-700 text-sm font-bold mb-2;
+  @apply block text-gray-700 text-sm font-semibold mb-2;
 }
 
 .counter-card {
