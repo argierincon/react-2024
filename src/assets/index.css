@@ -1,7 +1,7 @@
 /* HEADERS */
 /* ----- primary */
 .heading-primary {
-  @apply mb-4 text-3xl font-extrabold;
+  @apply text-3xl font-extrabold;
 }
 
 .heading-gradient {
@@ -14,12 +14,12 @@
   @apply font-bold py-2 px-4 rounded-full;
 }
 
-.btn--small {
-  @apply w-fit px-1.5 text-sm font-bold rounded-full;
-}
-
 .btn:disabled {
   @apply opacity-50 cursor-not-allowed;
+}
+
+.btn--small {
+  @apply w-fit px-1.5 text-sm font-bold rounded-full;
 }
 
 .btn-blue {
@@ -28,6 +28,10 @@
 
 .btn-blue:hover:not(:disabled) {
   @apply bg-blue-700;
+}
+
+.btn-blue--small {
+  @apply btn--small btn-blue;
 }
 
 /* ----- default */
@@ -39,6 +43,10 @@
   @apply bg-gray-100;
 }
 
+.btn-white--small {
+  @apply btn--small btn-white;
+}
+
 /* CARDS */
 .card-primary {
   @apply p-8 min-w-56	max-w-sm bg-white rounded-xl overflow-hidden shadow-md;
@@ -46,7 +54,25 @@
 
 /* INPUTS */
 /* ----- default */
-
 .input-default {
   @apply shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none;
+}
+
+.input-label {
+  @apply block text-gray-700 text-sm font-bold mb-2;
+}
+
+.counter-card {
+  @apply grid grid-cols-[1fr_100px] gap-2.5 items-start;
+  grid-template-rows: auto auto;
+
+  h2 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  div {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
 }
