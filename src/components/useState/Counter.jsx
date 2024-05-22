@@ -21,7 +21,7 @@ export const Counter = () => {
 
   const handleChangeCount = (e) => {
     const value = e.target.value;
-    if (value.length <= 3 && /^\d*$/.test(value)) {
+    if (value > 0 && value.length <= 3 && /^\d*$/.test(value)) {
       setCount(Number(value));
     }
   };
