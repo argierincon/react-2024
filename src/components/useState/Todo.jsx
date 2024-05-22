@@ -32,7 +32,7 @@ export const Todo = () => {
     <>
       <section className="card-primary m-auto mt-20">
         <div>
-          <h2 className="heading-primary">
+          <h2 className="heading-primary mb-4">
             <span className="heading-gradient">TO DO LIST!</span>
           </h2>
 
@@ -46,18 +46,18 @@ export const Todo = () => {
 
           <section className="mt-6 flex gap-2">
             <button
-              className="btn btn-blue"
-              onClick={onAddItem}
-              disabled={!inputVal}
-            >
-              Add
-            </button>
-            <button
               className="btn btn-white"
               onClick={onClearInput}
               disabled={!inputVal}
             >
               Clear input
+            </button>
+            <button
+              className="btn btn-blue"
+              onClick={onAddItem}
+              disabled={!inputVal}
+            >
+              Add
             </button>
           </section>
         </div>
@@ -69,10 +69,10 @@ export const Todo = () => {
                 {taskList.map((item, idx) => {
                   return (
                     <li className="mt-2" key={`${idx}-${item}`}>
-                      <div className="grid grid-cols-[1fr_40px] items-center">
+                      <div className="grid grid-cols-[1fr_70px] items-center">
                         <p>{item}</p>
                         <button
-                          className="btn--small btn-white"
+                          className="btn-white--small"
                           onClick={() => onClearItem(idx)}
                         >
                           <span>x</span>
@@ -84,7 +84,7 @@ export const Todo = () => {
               </ul>
             </div>
 
-            <button className="btn--small btn-white mt-4" onClick={onClearList}>
+            <button className="btn-white--small mt-4" onClick={onClearList}>
               Clear list
             </button>
           </>
