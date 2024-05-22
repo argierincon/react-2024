@@ -4,48 +4,76 @@ import "../../assets/index.css";
 export const Counter = () => {
   const [counter, setCounter] = useState(0);
 
+  const [count, setCount] = useState(1);
+
   const handleIncrement = () => {
-    setCounter(counter + 1);
+    setCounter(counter + count);
   };
 
   const handleDecrement = () => {
-    if (counter === 0) return;
-    setCounter(counter - 1);
+    if (counter <= 0) return;
+    setCounter(counter - count);
   };
 
   const handleReset = () => {
     setCounter(0);
   };
 
+  const handleChangeCount = (e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setCount(Number(value));
+    }
+  };
+
   return (
     <section>
       <div className="card-primary m-auto mt-20">
-        <h2 className="heading-primary">
-          <span className="heading-gradient">COUNTER</span>
-        </h2>
+        <section className="counter-card">
+          <h2 className="heading-primary">
+            <span className="heading-gradient">COUNTER</span>
+          </h2>
+          <div>
+            <div>
+              <label htmlFor="count" className="input-label">
+                Current count
+              </label>
+              <input
+                id="count"
+                type="text"
+                className="input-default w-24"
+                placeholder="Enter amount to change counter"
+                value={count}
+                onChange={handleChangeCount}
+              />
+            </div>
 
-        <p className="text-6xl text-gray-700">{counter}</p>
+            <button className="btn-white--small mt-4 block">Reset</button>
+          </div>
+
+          <p className="text-6xl text-gray-700">{counter}</p>
+        </section>
 
         <section className="mt-6 flex gap-2">
           <button
             className={`btn btn-blue ${
-              counter === 0 ? "cursor-not-allowed" : ""
+              counter <= 0 ? "cursor-not-allowed" : ""
             }`}
-            disabled={counter === 0}
+            disabled={counter <= 0}
             onClick={handleDecrement}
           >
-            -1
+            -{count}
           </button>
           <button
             className="btn btn-white"
             onClick={handleReset}
-            disabled={counter === 0}
+            disabled={counter <= 0}
           >
             Reset
           </button>
 
           <button className="btn btn-blue" onClick={handleIncrement}>
-            +1
+            +{count}
           </button>
         </section>
       </div>
