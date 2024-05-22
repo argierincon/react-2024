@@ -21,9 +21,13 @@ export const Counter = () => {
 
   const handleChangeCount = (e) => {
     const value = e.target.value;
-    if (/^\d*$/.test(value)) {
+    if (value.length <= 3 && /^\d*$/.test(value)) {
       setCount(Number(value));
     }
+  };
+
+  const handleCountReset = () => {
+    setCount(Number(1));
   };
 
   return (
@@ -48,7 +52,12 @@ export const Counter = () => {
               />
             </div>
 
-            <button className="btn-white--small mt-4 block">Reset</button>
+            <button
+              className="btn-white--small mt-4 block"
+              onClick={handleCountReset}
+            >
+              Reset
+            </button>
           </div>
 
           <p className="text-6xl text-gray-700">{counter}</p>
