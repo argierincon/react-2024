@@ -55,6 +55,7 @@ export const Counter = () => {
             <button
               className="btn-white--small mt-4 block"
               onClick={handleCountReset}
+              disabled={count === 1}
             >
               Reset
             </button>
