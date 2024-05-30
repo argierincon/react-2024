@@ -1,3 +1,7 @@
+#root {
+  height: 100vh;
+}
+
 /* HEADERS */
 /* ----- primary */
 .heading-primary {
@@ -19,7 +23,7 @@
 }
 
 .btn--small {
-  @apply w-fit px-1.5 text-sm;
+  @apply w-fit min-w-6 min-h-6 px-2 text-sm;
 }
 
 .btn:disabled,
@@ -55,7 +59,8 @@
 
 /* CARDS */
 .card-primary {
-  @apply p-8 min-w-56	max-w-sm bg-white rounded-xl overflow-hidden shadow-md;
+  @apply p-8 bg-white rounded-xl overflow-hidden shadow-md;
+  /* min-w-56	max-w-sm */
 }
 
 /* INPUTS */
