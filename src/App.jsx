@@ -1,11 +1,12 @@
 import { Counter, Todo } from "./components/useState/Imports.jsx";
+import { RandomBg } from "./components/useState/RandomBg.jsx";
 
 const App = () => {
   return (
-    <section className="bg-slate-50 h-screen p-4">
+    <RandomBg>
       <Counter />
       <Todo />
-    </section>
+    </RandomBg>
   );
 };
 
