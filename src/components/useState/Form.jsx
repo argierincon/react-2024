@@ -70,15 +70,6 @@ export const Form = () => {
     return !newErrors.username && !newErrors.password;
   };
 
-  // ... var react para los msjs del form
-  // ... var react para el loading
-  // ... implementar un loading balurdo
-  // ... mostrar error cuando los datos no coincidan
-  // ... mostrar successful login
-  // ... reiniciar el estado de la variable reactiva del form a vacio
-  // definir clases dinamicas para los mensajes del formulario
-  // anadir emojis
-
   const [isLoading, setIsLoading] = useState(false);
 
   const [formMsg, setFormMsgs] = useState({
@@ -103,7 +94,7 @@ export const Form = () => {
 
         setFormMsgs({
           type: "success",
-          msg: "Login successful",
+          msg: "Login successful ✅",
         });
 
         setFormData({
