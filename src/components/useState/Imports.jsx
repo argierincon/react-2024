@@ -1,4 +1,2 @@
-import { Counter } from "./Counter";
-import { Todo } from "./Todo";
-
-export { Counter, Todo };
+export { Counter } from "./Counter";
+export { Todo } from "./Todo";
