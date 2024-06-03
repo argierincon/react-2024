@@ -1,3 +1,4 @@
+import { Resize } from "./components/useEffect/Resize.jsx";
 import { Counter, Todo, Form } from "./components/useState/Imports.jsx";
 import { RandomBg } from "./components/useState/RandomBg.jsx";
 
@@ -7,6 +8,7 @@ const App = () => {
       <Counter />
       <Todo />
       <Form />
+      <Resize />
     </RandomBg>
   );
 };
