@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { MsgOnMounted } from "../useEffect/Imports";
 
 const grid = {
   display: "grid",
@@ -7,6 +8,8 @@ const grid = {
   paddingBottom: "1rem",
   gridTemplateRows: "repeat(7, minmax(10%, auto))",
 };
+
+const useEffectModalTime = 2000;
 
 const gridCount = [1, 2, 3];
 
@@ -43,6 +46,22 @@ export const RandomBg = ({ children }) => {
     setBgcolor(randomColor);
   };
 
+  // MODAL USE EFFECT
+
+  const [modalVisibility, setModalVisibility] = useState(false);
+
+  const onChangeModal = () => {
+    setModalVisibility(!modalVisibility);
+  };
+
+  useEffect(() => {
+    console.log("Me ejecuto 2 veces porque estoy en modo estricto");
+
+    setTimeout(() => {
+      setModalVisibility(true);
+    }, useEffectModalTime);
+  }, []);
+
   return (
     <section className={`${bgColor} h-full p-4`}>
       <header className="mb-4 flex items-end gap-4">
@@ -66,7 +85,13 @@ export const RandomBg = ({ children }) => {
         <button onClick={onChangeBg} className="btn-blue--small">
           Change Bg color
         </button>
+        <button onClick={onChangeModal} className="btn-blue--small">
+          Use effect modal
+        </button>
       </header>
+      {modalVisibility && (
+        <MsgOnMounted onCloseModal={onChangeModal} time={useEffectModalTime} />
+      )}
       <div className="h-[calc(100%-80px)]" style={combinedStyles}>
         {children}
       </div>

@@ -1,0 +1,1 @@
+export { MsgOnMounted } from "./MsgOnMounted";
