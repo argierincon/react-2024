@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 
 export const MsgOnMounted = ({ onCloseModal, time }) => {
-  const [modalTime, setModalTime] = useState(time);
+  const [modalTime, setModalTime] = useState(1);
 
   const formattedTime = () => {
     const seconds = time / 1000;
