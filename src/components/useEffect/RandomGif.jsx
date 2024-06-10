@@ -37,7 +37,7 @@ export const RandomGif = () => {
         <p className="input-label">{gifList.title}</p>
         <img
           className="h-48"
-          src={gifList.images?.downsized_still.url}
+          src={gifList.images?.downsized_medium.url}
           alt={gifList.title}
         />
 
