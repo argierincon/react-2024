@@ -1,10 +1,15 @@
-import { Resize } from "./components/useEffect/Resize.jsx";
-import { Counter, Todo, Form } from "./components/useState/Imports.jsx";
-import { RandomBg } from "./components/useState/RandomBg.jsx";
+import { Resize, InactivityTime } from "./components/useEffect/Imports.jsx";
+import {
+  Counter,
+  Todo,
+  Form,
+  RandomBg,
+} from "./components/useState/Imports.jsx";
 
 const App = () => {
   return (
     <RandomBg>
+      <InactivityTime />
       <Counter />
       <Todo />
       <Form />
