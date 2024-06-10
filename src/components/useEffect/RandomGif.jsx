@@ -9,19 +9,26 @@ export const RandomGif = () => {
 
   const [update, setUpdate] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const onUpdateGif = () => {
-    setUpdate(!update);
+    if (!isLoading) {
+      setUpdate(!update);
+    }
   };
 
   useEffect(() => {
     const getGifs = async () => {
       try {
+        setIsLoading(true);
         const resp = await fetch(url);
         const { data } = await resp.json();
 
         setGifList(data);
       } catch (error) {
         console.log("ERROR:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -42,7 +49,11 @@ export const RandomGif = () => {
         />
 
         <button className="btn btn-blue" onClick={onUpdateGif}>
-          Update gif
+          {isLoading ? (
+            <span className="italic">...Loading</span>
+          ) : (
+            "Update gif"
+          )}
         </button>
       </div>
     </section>
