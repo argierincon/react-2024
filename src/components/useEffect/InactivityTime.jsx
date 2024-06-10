@@ -43,7 +43,7 @@ export const InactivityTime = () => {
   }, [inactivityTime]);
 
   return (
-    <section className="card-primary">
+    <section className="card-primary row-span-1 col-span-1">
       <h2 className="heading-primary">
         <span className="heading-gradient">INACTIVITY TIME</span>
       </h2>
