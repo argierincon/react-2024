@@ -1,4 +1,8 @@
-import { Resize, InactivityTime } from "./components/useEffect/Imports.jsx";
+import {
+  Resize,
+  InactivityTime,
+  RandomGif,
+} from "./components/useEffect/Imports.jsx";
 import {
   Counter,
   Todo,
@@ -9,10 +13,11 @@ import {
 const App = () => {
   return (
     <RandomBg>
-      <InactivityTime />
       <Counter />
+      <InactivityTime />
       <Todo />
       <Form />
+      <RandomGif />
       <Resize />
     </RandomBg>
   );
