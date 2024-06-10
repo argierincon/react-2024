@@ -11,7 +11,7 @@ export const MsgOnMounted = ({ onCloseModal, time }) => {
 
   useEffect(() => {
     formattedTime();
-  });
+  }, []);
 
   return (
     <section className="absolute bg-indigo-500/30 h-full w-full top-0 left-0 z-10 flex items-center justify-center">
