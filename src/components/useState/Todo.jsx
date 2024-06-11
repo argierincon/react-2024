@@ -44,7 +44,7 @@ export const Todo = () => {
   };
 
   return (
-    <section className="card-primary row-span-7">
+    <section className="card-primary row-span-3">
       <div>
         <h2 className="heading-primary mb-4">
           <span className="heading-gradient">TO DO LIST!</span>
