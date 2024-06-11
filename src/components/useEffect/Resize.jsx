@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export const Resize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -23,17 +23,36 @@ export const Resize = () => {
     };
   }, []);
 
+  const sectionRef = useRef(null);
+
+  const [elemWidth, setElemWidth] = useState(0);
+  const [elemHeight, setElemHeight] = useState(0);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      const rect = sectionRef.current.getBoundingClientRect();
+
+      setElemWidth(rect.width);
+      setElemHeight(rect.height);
+    }
+  }, [windowSize]);
+
   return (
-    <section className="card-primary">
+    <section ref={sectionRef} className="card-primary">
       <h2 className="heading-primary">
         <span className="heading-gradient">WINDOW RESIZE</span>
       </h2>
+      <section className="flex">
+        <div className="mt-4">
+          <p className="input-label">Width: {windowSize.width}</p>
+          <p className="input-label"> Height: {windowSize.height}</p>
+        </div>
 
-      <div className="mt-4">
-        <p className="input-label">Width: {windowSize.width}</p>
-        <p className="input-label"> Height: {windowSize.height}</p>
-      </div>
-      {/* <p>{windowSize}</p> */}
+        <div className="mt-4">
+          <p className="input-label">Element width: {elemWidth}</p>
+          <p className="input-label">Element height: {elemHeight}</p>
+        </div>
+      </section>
     </section>
   );
 };
