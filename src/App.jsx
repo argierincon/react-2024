@@ -12,6 +12,7 @@ import {
 } from "./components/useEffect/Imports.jsx";
 
 import {
+  AnimatedElement,
   AutoFocusBtn,
   ElementMeasurement,
 } from "./components/useRef/Imports.jsx";
@@ -22,6 +23,7 @@ const App = () => {
       <Counter />
       <InactivityTime />
       <Todo />
+      <AnimatedElement />
       <Form />
       <RandomGif />
       <Resize />
