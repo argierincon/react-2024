@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
+
 export const RandomGif = () => {
-  const API_KEY = import.meta.env.VITE_API_KEY;
-
-  const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}`;
-
   const [gifList, setGifList] = useState({});
 
   const [update, setUpdate] = useState(false);
